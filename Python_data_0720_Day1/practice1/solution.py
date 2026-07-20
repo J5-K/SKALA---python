@@ -15,6 +15,7 @@ def read_logs(file_path: Path) -> Iterator[dict[str, str]]:
         for row in reader:
             yield row
 
+#default
 def accumulate_log(result, log):
     """로그 한 건을 받아 집계 결과에 누적합니다."""
     result["total_count"] += 1
