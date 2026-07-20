@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from pydantic import BaseModel,BaseModel, Field, field_validator, ValidationError
+from pydantic import BaseModel, Field, field_validator, ValidationError
 from datetime import date
 from typing import Literal
 
