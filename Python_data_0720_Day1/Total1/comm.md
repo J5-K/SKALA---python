@@ -1,6 +1,7 @@
 # 종합실습 1 - 비동기 ETL 파이프라인
 
 - 종합설명 : 실습 2의 Pydantic 검증과 실습 3의 비동기 수집을 하나로 연결함
+        - JSON 데이터를 비동기로 수집(Extract), Pydantic으로 검증(Transform), 정상/오류 데이터 분리, CSV & Parquet 저장(Load), pytest로 검증
 
 - 구현 내용:
     비동기 데이터 60건 수집
