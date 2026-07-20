@@ -111,9 +111,9 @@ async def run(
     if out_dir is None:
         out_dir = Path(__file__).parent / "output"
 
-    raw = await extract(ids)                 # E: 비동기 수집
-    valid, invalid = transform(raw)          # T: 정상/오염 분리
-    dataframe = load(valid, out_dir)         # L: CSV와 Parquet 저장
+    raw = await extract(ids)  # E: 비동기 수집
+    valid, invalid = transform(raw)  # T: 정상/오염 분리
+    dataframe = load(valid, out_dir)  # L: CSV와 Parquet 저장
 
     return {
         "total": len(raw),
@@ -136,4 +136,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

@@ -37,9 +37,7 @@ def test_extract_collects_all_items() -> None:
 
 
 def test_load_creates_csv_and_parquet(tmp_path) -> None:
-    valid, _ = transform(
-        [{"id": 1, "name": "상품", "category": "food", "price": 1000}]
-    )
+    valid, _ = transform([{"id": 1, "name": "상품", "category": "food", "price": 1000}])
     load(valid, tmp_path)
     assert (tmp_path / "products.csv").exists()
     assert (tmp_path / "products.parquet").exists()
@@ -52,4 +50,3 @@ def test_parquet_round_trip_and_run(tmp_path) -> None:
     assert summary == {"total": 60, "valid": 57, "invalid": 3, "rows_saved": 57}
     assert len(saved) == 57
     assert saved["price"].dtype.kind == "f"
-

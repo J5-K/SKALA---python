@@ -19,4 +19,3 @@ class Product(BaseModel):
         if not cleaned:
             raise ValueError("카테고리는 비어 있을 수 없습니다")
         return cleaned
-
