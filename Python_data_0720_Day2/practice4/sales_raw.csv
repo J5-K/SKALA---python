@@ -1,5 +1,5 @@
 order_id,order_date,region,category,quantity,unit_price,discount
-ORD-000000,2025-04-07,,Beauty,6,12609.0,0
+ORD-000000,2025-04-,Busan,Beauty,6,12609.0,0
 ORD-000001,2025-04-08,Busan,Home,1,262252.0,0.05
 ORD-000002,2025-03-01,Gwangju,Beauty,3,34466.0,0.15
 ORD-000003,2025-01-11,Seoul,Electronics,3,127645.0,0
