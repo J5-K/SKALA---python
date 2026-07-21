@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 1050px; margin: 40px auto; padding: 0 20px; color: #172033; }
+    .muted { color: #687386; } .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .card { background: #eef4ff; border-radius: 14px; padding: 18px; } .card b { font-size: 24px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 32px; }
+    th, td { padding: 11px; border-bottom: 1px solid #d9dfeb; text-align: right; }
+    th:first-child, td:first-child { text-align: left; }
+    @media (max-width: 700px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+  <h1>{{ title }}</h1><p class="muted">생성 시각: {{ generated_at }}</p>
+  <div class="cards">
+    <div class="card">주문 수<br><b>{{ "{:,}".format(kpis.orders) }}</b></div>
+    <div class="card">판매 수량<br><b>{{ "{:,}".format(kpis.total_quantity) }}</b></div>
+    <div class="card">총매출<br><b>{{ "{:,.0f}".format(kpis.total_sales) }}원</b></div>
+    <div class="card">평균 주문액<br><b>{{ "{:,.0f}".format(kpis.average_order) }}원</b></div>
+  </div>
+  <h2>카테고리별 매출</h2>
+  <table><thead><tr><th>카테고리</th><th>주문 수</th><th>수량</th><th>매출</th></tr></thead><tbody>
+  {% for row in category_rows %}<tr><td>{{ row.category }}</td><td>{{ "{:,}".format(row.orders) }}</td><td>{{ "{:,.0f}".format(row.quantity) }}</td><td>{{ "{:,.0f}".format(row.sales) }}원</td></tr>{% endfor %}
+  </tbody></table>
+  <h2>매출 상위 지역</h2>
+  <table><thead><tr><th>지역</th><th>매출</th></tr></thead><tbody>
+  {% for row in region_rows %}<tr><td>{{ row.region }}</td><td>{{ "{:,.0f}".format(row.sales_amount) }}원</td></tr>{% endfor %}
+  </tbody></table>
+</body>
+</html>
