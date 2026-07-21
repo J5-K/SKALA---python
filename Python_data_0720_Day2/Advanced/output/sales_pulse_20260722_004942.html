@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sales Pulse - 매출 건강검진 리포트</title>
+  <style>
+    :root { --ink:#172033; --muted:#697386; --line:#e4e7ec; --brand:#4f46e5; }
+    * { box-sizing:border-box; } body { margin:0; background:#f6f7fb; color:var(--ink); font-family:Pretendard,"Noto Sans KR",Arial,sans-serif; }
+    main { max-width:1120px; margin:auto; padding:42px 22px 70px; } header { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; }
+    h1 { margin:0 0 8px; } h2 { margin-top:34px; } .muted { color:var(--muted); } .badge { padding:9px 14px; border-radius:999px; font-weight:700; }
+    .normal { color:#087443; background:#dcfae6; } .warning { color:#93370d; background:#fef0c7; } .danger { color:#b42318; background:#fee4e2; }
+    .cards { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:25px 0; } .card,.panel { background:white; border:1px solid var(--line); border-radius:18px; padding:20px; box-shadow:0 5px 18px rgba(16,24,40,.04); }
+    .card strong { display:block; font-size:25px; margin-top:9px; } .brief { border-left:5px solid var(--brand); } .brief li { margin:10px 0; line-height:1.55; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; } table { width:100%; border-collapse:collapse; } th,td { padding:11px 8px; border-bottom:1px solid var(--line); text-align:right; } th:first-child,td:first-child { text-align:left; }
+    .up { color:#067647; } .down { color:#b42318; } .chart { overflow:hidden; }
+    @media(max-width:800px){ .cards,.grid{grid-template-columns:1fr 1fr;} header{display:block;} .badge{display:inline-block;margin-top:10px;} }
+    @media(max-width:520px){ .cards,.grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body><main>
+  <header><div><h1>Sales Pulse - 매출 건강검진 리포트</h1><div class="muted">생성 시각 2026-07-22 00:49:42 · 분석 기준 2025-04-02 ~ 2025-05-01</div></div><div class="badge danger">● 위험</div></header>
+  <section class="cards">
+    <div class="card"><span class="muted">전체 주문</span><strong>5,000건</strong></div>
+    <div class="card"><span class="muted">전체 매출</span><strong>12,137,771,624원</strong></div>
+    <div class="card"><span class="muted">평균 주문액</span><strong>2,427,554원</strong></div>
+    <div class="card"><span class="muted">최근 매출 변화</span><strong class="down">%+.1f%</strong></div>
+  </section>
+  <section class="panel brief"><h2>오늘의 사장님 브리핑</h2><ol><li>최근 30일 매출은 직전 기간보다 11.8% 감소했습니다.</li><li>가장 성장한 카테고리는 Home로, 매출이 +240.0% 변했습니다.</li><li>관찰이 필요한 카테고리는 Food로, 매출이 -55.5% 변했습니다.</li></ol></section>
+  <h2>매출 흐름과 이상 징후</h2><section class="panel chart"><svg viewBox="0 0 1000 360" role="img" aria-label="일별 매출 추이" style="width:100%;height:auto">
+      <line x1="70" y1="20" x2="70" y2="315" stroke="#d0d5dd"/>
+      <line x1="70" y1="315" x2="980" y2="315" stroke="#d0d5dd"/>
+      <text x="10" y="28" fill="#697386" font-size="13">569,090,250원</text>
+      <text x="10" y="315" fill="#697386" font-size="13">19,310,806원</text>
+      <polyline points="70.0,308.8 77.6,311.8 85.2,304.6 92.8,308.7 100.3,311.8 107.9,302.4 115.5,220.3 123.1,314.9 130.7,312.5 138.2,263.0 145.8,305.6 153.4,260.5 161.0,302.1 168.6,286.9 176.2,309.2 183.8,301.3 191.3,303.4 198.9,305.2 206.5,307.1 214.1,297.3 221.7,175.3 229.2,280.4 236.8,122.8 244.4,309.3 252.0,194.1 259.6,301.2 267.2,174.2 274.8,107.8 282.3,310.3 289.9,222.6 297.5,304.0 305.1,306.4 312.7,293.4 320.2,140.9 327.8,311.2 335.4,298.9 343.0,131.6 350.6,308.0 358.2,311.6 365.8,306.8 373.3,308.0 380.9,303.2 388.5,199.3 396.1,305.3 403.7,273.7 411.2,304.4 418.8,169.6 426.4,235.7 434.0,154.3 441.6,188.3 449.2,302.3 456.8,304.2 464.3,302.2 471.9,308.8 479.5,178.6 487.1,261.4 494.7,306.3 502.2,154.2 509.8,274.1 517.4,304.5 525.0,309.8 532.6,306.6 540.2,249.1 547.8,313.1 555.3,178.3 562.9,305.9 570.5,307.0 578.1,142.2 585.7,306.5 593.2,269.9 600.8,306.2 608.4,272.0 616.0,176.0 623.6,314.0 631.2,310.6 638.8,305.1 646.3,304.1 653.9,311.1 661.5,308.0 669.1,253.0 676.7,305.0 684.2,307.0 691.8,228.6 699.4,307.2 707.0,307.7 714.6,302.3 722.2,307.9 729.8,100.5 737.3,279.8 744.9,309.0 752.5,193.1 760.1,305.4 767.7,303.9 775.2,304.9 782.8,200.6 790.4,306.6 798.0,310.0 805.6,311.7 813.2,20.0 820.8,310.4 828.3,305.1 835.9,303.5 843.5,297.2 851.1,309.7 858.7,171.9 866.2,239.4 873.8,309.0 881.4,308.0 889.0,285.8 896.6,183.0 904.2,309.3 911.8,307.2 919.3,315.0 926.9,309.6 934.5,310.7 942.1,235.8 949.7,305.5 957.2,266.4 964.8,309.7 972.4,308.0 980.0,309.8" fill="none" stroke="#4f46e5" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="236.8" cy="122.8" r="7" fill="#ef4444"><title>2025-01-23: 377,478,101원 (이상 매출일)</title></circle><circle cx="274.8" cy="107.8" r="7" fill="#ef4444"><title>2025-01-28: 405,403,325원 (이상 매출일)</title></circle><circle cx="320.2" cy="140.9" r="7" fill="#ef4444"><title>2025-02-03: 343,684,566원 (이상 매출일)</title></circle><circle cx="343.0" cy="131.6" r="7" fill="#ef4444"><title>2025-02-06: 361,172,467원 (이상 매출일)</title></circle><circle cx="578.1" cy="142.2" r="7" fill="#ef4444"><title>2025-03-09: 341,291,564원 (이상 매출일)</title></circle><circle cx="729.8" cy="100.5" r="7" fill="#ef4444"><title>2025-03-29: 419,036,861원 (이상 매출일)</title></circle><circle cx="813.2" cy="20.0" r="7" fill="#ef4444"><title>2025-04-09: 569,090,250원 (이상 매출일)</title></circle>
+      <text x="70" y="348" fill="#697386" font-size="13">2025-01-01</text>
+      <text x="890" y="348" fill="#697386" font-size="13">2025-05-01</text>
+      <circle cx="840" cy="18" r="6" fill="#ef4444"/><text x="852" y="23" fill="#697386" font-size="13">이상 매출일</text>
+    </svg></section>
+  <div class="grid">
+    <section class="panel"><h2>카테고리 변화</h2><table><tr><th>카테고리</th><th>최근 매출</th><th>증감률</th></tr><tr><td>Beauty</td><td>799,157,422원</td><td class="up">%+.1f%</td></tr><tr><td>Home</td><td>710,854,554원</td><td class="up">%+.1f%</td></tr><tr><td>Fashion</td><td>494,261,000원</td><td class="down">%+.1f%</td></tr><tr><td>Electronics</td><td>365,136,394원</td><td class="down">%+.1f%</td></tr><tr><td>Food</td><td>216,949,655원</td><td class="down">%+.1f%</td></tr></table></section>
+    <section class="panel"><h2>지역 변화</h2><table><tr><th>지역</th><th>최근 매출</th><th>증감률</th></tr><tr><td>Seoul</td><td>688,825,073원</td><td class="up">%+.1f%</td></tr><tr><td>Incheon</td><td>659,331,397원</td><td class="up">%+.1f%</td></tr><tr><td>Busan</td><td>437,997,171원</td><td class="down">%+.1f%</td></tr><tr><td>Daegu</td><td>307,367,845원</td><td class="down">%+.1f%</td></tr><tr><td>Unknown</td><td>300,356,769원</td><td class="up">%+.1f%</td></tr><tr><td>Gwangju</td><td>192,480,772원</td><td class="down">%+.1f%</td></tr></table></section>
+  </div>
+  <h2>할인율별 주문 효과</h2><section class="panel"><table><tr><th>할인율</th><th>주문 수</th><th>평균 주문액</th><th>총매출</th></tr><tr><td>15%</td><td>815건</td><td>2,643,053원</td><td>2,154,087,870원</td></tr><tr><td>0%</td><td>2507건</td><td>2,613,400원</td><td>6,551,792,752원</td></tr><tr><td>10%</td><td>814건</td><td>2,374,470원</td><td>1,932,818,896원</td></tr><tr><td>5%</td><td>864건</td><td>1,735,037원</td><td>1,499,072,107원</td></tr></table></section>
+</main></body></html>
